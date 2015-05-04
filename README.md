@@ -3,6 +3,7 @@ Open cmd or terminal and cd to the path you have downloaded the files to. Then r
 1. "cabal build" <br>
 2. "cd dist/build/assignment/" <br>
 3. "./assignment" <br>
+To access server open browser and enter "http://localhost:8000/index" 
 
 <h3> Known Issues: </h3>
 * Doesn't update results when refreshing page.
