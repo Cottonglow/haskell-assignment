@@ -4,6 +4,10 @@ Open cmd or terminal and cd to the path you have downloaded the files to. Then r
 2. "cd dist/build/assignment/" <br>
 3. "./assignment" <br>
 
+<h3> Known Issues: </h3>
+* Doesn't update results when refreshing page.
+* User can't edit files.
+
 <h3>References:</h3> 
 Get JSON from website - https://www.fpcomplete.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/json <br>
 Happstack - http://happstack.com/docs/crashcourse/index.html
