@@ -1,6 +1,5 @@
 {--# LANGUAGE OverloadedStrings #--}
-import Data.Acid
-import Control.Applicative
+
 import Control.Exception
 import Control.Monad
 import Data.Aeson
@@ -105,6 +104,7 @@ main :: IO ()
 -- Read local File : readJSON getLocal
 -- Read external File : readJSON $ getFile "FILENAME"
 -- Read URL : readJSON $ getURL "URLNAME"
+-- unsafeLocalState should be avoided since you need to manually restart the server again to see the changes.
 main = simpleHTTP nullConf $
  	msum [ dir "index" $ ok $ indexMessage,
  		dir "appendfromurl" $ uriRest $ \x -> ok $ unsafeLocalState $ appendsURL x,
