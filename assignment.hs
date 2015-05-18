@@ -73,9 +73,10 @@ indexMessage :: String
 indexMessage = "Instructions:\n\
 				\ Append from URL - Change directory to /appendfromurl/URL\n\
 				\ Append from File - Change directory to /appendfromfile/FILE\n\
-				\ Create new file (can be used once only << to show functionality) - Change directory to /createfile/URL\n\
+				\ Create new file (Change hardcoded name in createFile function to be able to create more than one) - Change directory to /createfile/URL\n\
 				\  Replacing URL with the actual URL and FILE with the file.\n\n" ++ "Local File:\n" ++ show getLocal
 
+-- Appends data to file from a URL.
 appendsURL :: String -> IO String
 appendsURL x = do
 	e <- try (appends $ getURL $ Prelude.drop 1 x) :: IO (Either SomeException ())
@@ -83,6 +84,7 @@ appendsURL x = do
 		Left errorMessage -> return $ show errorMessage
 		Right _ -> return "Appended"
 
+-- Appends data to file from another file.
 appendsFile :: String -> IO String
 appendsFile x = do
 	e <- try (appends $ getFile x) :: IO (Either SomeException ())
@@ -90,6 +92,7 @@ appendsFile x = do
 		Left errorMessage -> return $ show errorMessage
 		Right _ -> return "Appended"
 
+-- Creates a new file.
 createFile :: String -> IO String
 createFile x = do
 	e <- try (createJSON "new.json" $ getURL $ Prelude.drop 1 x) :: IO (Either SomeException ())
@@ -104,6 +107,7 @@ main :: IO ()
 -- Read local File : readJSON getLocal
 -- Read external File : readJSON $ getFile "FILENAME"
 -- Read URL : readJSON $ getURL "URLNAME"
+
 -- unsafeLocalState should be avoided since you need to manually restart the server again to see the changes.
 main = simpleHTTP nullConf $
  	msum [ dir "index" $ ok $ indexMessage,

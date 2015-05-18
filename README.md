@@ -3,6 +3,7 @@ No viva.
 <h3>Instructions:</h3>
 Open cmd or terminal and cd to the path you have downloaded the files to. Then run the following commands: <br>
 1. "cabal build" <br>
+	a. May require you to run "cabal configure" first.
 2. "cd dist/build/assignment/" <br>
 3. "./assignment" <br>
 To access server open browser and enter "http://localhost:8000/index" 
