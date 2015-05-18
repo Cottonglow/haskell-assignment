@@ -10,6 +10,7 @@ To access server open browser and enter "http://localhost:8000/index"
 <h3> Known Issues: </h3>
 * Doesn't update results when refreshing page.
 * User can't edit files.
+* No way to monitor who added information.
 
 <h3>References:</h3> 
 Get JSON from website - https://www.fpcomplete.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/json <br>
